@@ -1,0 +1,1479 @@
+[gd_scene load_steps=158 format=2]
+
+[ext_resource path="res://map/back ground.png" type="Texture" id=1]
+[ext_resource path="res://prop/prop.png" type="Texture" id=2]
+[ext_resource path="res://ui.gd" type="Script" id=3]
+[ext_resource path="res://map .tscn" type="PackedScene" id=4]
+[ext_resource path="res://prop/ui overlay 1.png" type="Texture" id=5]
+[ext_resource path="res://prop/joi stick wheel.png" type="Texture" id=6]
+[ext_resource path="res://prop/joi stick.png" type="Texture" id=7]
+[ext_resource path="res://prop/equiment icon final.png" type="Texture" id=8]
+[ext_resource path="res://player/FINAL player assets/uniform/uniform.png" type="Texture" id=9]
+[ext_resource path="res://prop/ui overlay 2.png" type="Texture" id=10]
+[ext_resource path="res://map/cobination door lock.png" type="Texture" id=11]
+[ext_resource path="res://player/FINAL player assets/yoga teacher/yoga teacher.png" type="Texture" id=12]
+[ext_resource path="res://player/default icon.png" type="Texture" id=14]
+[ext_resource path="res://player/ghost skin icon.png" type="Texture" id=15]
+[ext_resource path="res://player/uniform icon.png" type="Texture" id=16]
+[ext_resource path="res://player/yoga icon.png" type="Texture" id=17]
+[ext_resource path="res://prop/inventory prop.png" type="Texture" id=18]
+[ext_resource path="res://font/Super Mario World Text Box.ttf" type="DynamicFontData" id=19]
+[ext_resource path="res://map/the shop .png" type="Texture" id=20]
+[ext_resource path="res://prop/text box default.png" type="Texture" id=26]
+[ext_resource path="res://prop/text box dev.png" type="Texture" id=27]
+[ext_resource path="res://prop/text box ghost.png" type="Texture" id=28]
+[ext_resource path="res://prop/text box shop keeper.png" type="Texture" id=29]
+[ext_resource path="res://prop/text box uniform.png" type="Texture" id=30]
+[ext_resource path="res://prop/text box yoga teacher.png" type="Texture" id=31]
+[ext_resource path="res://joi stick.gd" type="Script" id=32]
+[ext_resource path="res://prop/win sign.png" type="Texture" id=33]
+[ext_resource path="res://prop/lose sign.png" type="Texture" id=34]
+[ext_resource path="res://prop/respawn sign.png" type="Texture" id=35]
+[ext_resource path="res://prop/die sign.png" type="Texture" id=36]
+[ext_resource path="res://prop/setting menu.png" type="Texture" id=37]
+[ext_resource path="res://back ground.gd" type="Script" id=38]
+[ext_resource path="res://inventory.gd" type="Script" id=39]
+[ext_resource path="res://root.gd" type="Script" id=40]
+[ext_resource path="res://replay amount.gd" type="Script" id=41]
+[ext_resource path="res://secret door interaction.gd" type="Script" id=42]
+[ext_resource path="res://setting menu.gd" type="Script" id=43]
+[ext_resource path="res://Player.gd" type="Script" id=44]
+[ext_resource path="res://Timer.gd" type="Script" id=46]
+[ext_resource path="res://in game store.gd" type="Script" id=47]
+[ext_resource path="res://font/3x3_font_for_nerds.ttf" type="DynamicFontData" id=48]
+[ext_resource path="res://ingame inventory.gd" type="Script" id=49]
+[ext_resource path="res://dialog boxes.gd" type="Script" id=50]
+[ext_resource path="res://player/FINAL player assets/default/default.png" type="Texture" id=51]
+[ext_resource path="res://player/FINAL player assets/ghost/ghost.png" type="Texture" id=52]
+[ext_resource path="res://AudioStreamPlayer.gd" type="Script" id=53]
+[ext_resource path="res://audio/buttons-001.wav" type="AudioStream" id=54]
+[ext_resource path="res://audio/talking.wav" type="AudioStream" id=55]
+[ext_resource path="res://talking afx.gd" type="Script" id=56]
+[ext_resource path="res://audio/ingame music-001.ogg" type="AudioStream" id=57]
+[ext_resource path="res://audio/ingame music-002.ogg" type="AudioStream" id=58]
+[ext_resource path="res://audio/menu music.ogg" type="AudioStream" id=59]
+[ext_resource path="res://ingame music.gd" type="Script" id=60]
+[ext_resource path="res://menu music.gd" type="Script" id=61]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 41, 47, 36, 57 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 2, 47, 36, 57 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 80, 47, 36, 57 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 119, 47, 36, 57 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 158, 47, 36, 57 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 14
+font_data = ExtResource( 19 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 3
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = 1
+extra_spacing_bottom = 1
+extra_spacing_char = 1
+extra_spacing_space = 1
+font_data = ExtResource( 48 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 34, 13, 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 2 )
+region = Rect2( 34, 13, 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 2 )
+region = Rect2( 34, 13, 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 2 )
+region = Rect2( 34, 13, 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 2 )
+region = Rect2( 6, 13, 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 2 )
+region = Rect2( 34, 13, 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 2 )
+region = Rect2( 34, 13, 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 2 )
+region = Rect2( 34, 13, 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 2 )
+region = Rect2( 6, 13, 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 2 )
+region = Rect2( 34, 13, 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 2 )
+region = Rect2( 59, 3, 37, 37 )
+
+[sub_resource type="CircleShape2D" id=29]
+radius = 18.5
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 2 )
+region = Rect2( 106, 7, 22, 27 )
+
+[sub_resource type="AtlasTexture" id=53]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 240, 135 )
+
+[sub_resource type="AtlasTexture" id=54]
+atlas = ExtResource( 6 )
+region = Rect2( 240, 0, 240, 135 )
+
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 6 )
+region = Rect2( 480, 0, 240, 135 )
+
+[sub_resource type="SpriteFrames" id=56]
+animations = [ {
+"frames": [ SubResource( 53 ), SubResource( 54 ), SubResource( 55 ) ],
+"loop": false,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 7 )
+region = Rect2( 17, 95, 24, 24 )
+
+[sub_resource type="CircleShape2D" id=58]
+radius = 12.0
+
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 2 )
+region = Rect2( 41, 130, 33, 9 )
+
+[sub_resource type="AtlasTexture" id=60]
+atlas = ExtResource( 2 )
+region = Rect2( 7, 150, 33, 9 )
+
+[sub_resource type="RectangleShape2D" id=61]
+extents = Vector2( 16.5, 4.5 )
+
+[sub_resource type="AtlasTexture" id=62]
+atlas = ExtResource( 2 )
+region = Rect2( 78, 144, 24, 16 )
+
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 2 )
+region = Rect2( 103, 110, 24, 16 )
+
+[sub_resource type="RectangleShape2D" id=64]
+extents = Vector2( 12, 8 )
+
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 2 )
+region = Rect2( 78, 144, 24, 16 )
+
+[sub_resource type="AtlasTexture" id=66]
+atlas = ExtResource( 2 )
+region = Rect2( 103, 110, 24, 16 )
+
+[sub_resource type="RectangleShape2D" id=67]
+extents = Vector2( 12, 8 )
+
+[sub_resource type="AtlasTexture" id=68]
+atlas = ExtResource( 8 )
+region = Rect2( 29, 16, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=69]
+atlas = ExtResource( 2 )
+region = Rect2( 7, 130, 33, 9 )
+
+[sub_resource type="AtlasTexture" id=70]
+atlas = ExtResource( 2 )
+region = Rect2( 7, 150, 33, 9 )
+
+[sub_resource type="RectangleShape2D" id=71]
+extents = Vector2( 16.5, 4.5 )
+
+[sub_resource type="AtlasTexture" id=72]
+atlas = ExtResource( 2 )
+region = Rect2( 41, 140, 33, 9 )
+
+[sub_resource type="AtlasTexture" id=73]
+atlas = ExtResource( 2 )
+region = Rect2( 7, 150, 33, 9 )
+
+[sub_resource type="RectangleShape2D" id=74]
+extents = Vector2( 16.5, 4.5 )
+
+[sub_resource type="AtlasTexture" id=75]
+atlas = ExtResource( 2 )
+region = Rect2( 41, 110, 33, 9 )
+
+[sub_resource type="AtlasTexture" id=76]
+atlas = ExtResource( 2 )
+region = Rect2( 7, 150, 33, 9 )
+
+[sub_resource type="RectangleShape2D" id=77]
+extents = Vector2( 16.5, 4.5 )
+
+[sub_resource type="AtlasTexture" id=78]
+atlas = ExtResource( 2 )
+region = Rect2( 7, 140, 33, 9 )
+
+[sub_resource type="AtlasTexture" id=79]
+atlas = ExtResource( 2 )
+region = Rect2( 7, 150, 33, 9 )
+
+[sub_resource type="RectangleShape2D" id=80]
+extents = Vector2( 16.5, 4.5 )
+
+[sub_resource type="Animation" id=81]
+length = 0.75
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 10, 11, 12, 13, 14 ]
+}
+
+[sub_resource type="Animation" id=82]
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=83]
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="Animation" id=84]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 20, 21, 22, 23 ]
+}
+
+[sub_resource type="Animation" id=85]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 15, 16, 17, 18 ]
+}
+
+[sub_resource type="Animation" id=86]
+length = 0.75
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 10, 11, 12, 13, 14 ]
+}
+
+[sub_resource type="Animation" id=87]
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=88]
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="Animation" id=89]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 15, 16, 17, 18 ]
+}
+
+[sub_resource type="Animation" id=90]
+resource_name = "run up"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 20, 21, 22, 23 ]
+}
+
+[sub_resource type="Animation" id=91]
+length = 0.75
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 10, 11, 12, 13, 14 ]
+}
+
+[sub_resource type="Animation" id=92]
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=93]
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="Animation" id=94]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 20, 21, 22, 23 ]
+}
+
+[sub_resource type="Animation" id=95]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 15, 16, 17, 18 ]
+}
+
+[sub_resource type="Animation" id=96]
+loop = true
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875 ),
+"transitions": PoolRealArray( 5.27803, 1, 1, 1, 5.65684, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=97]
+loop = true
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875 ),
+"transitions": PoolRealArray( 5.27803, 1, 1, 1, 5.65684, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=98]
+length = 0.6
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10 ]
+}
+
+[sub_resource type="Animation" id=99]
+length = 0.6
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10 ]
+}
+
+[sub_resource type="Animation" id=100]
+loop = true
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 5.27802, 1, 1, 1 ),
+"update": 1,
+"values": [ 16, 17, 18, 19, 20, 21, 22, 23 ]
+}
+
+[sub_resource type="Animation" id=101]
+loop = true
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 5.27802, 1, 1, 1 ),
+"update": 1,
+"values": [ 16, 17, 18, 19, 20, 21, 22, 23 ]
+}
+
+[sub_resource type="Animation" id=102]
+length = 0.6
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 24, 25, 26 ]
+}
+
+[sub_resource type="Animation" id=103]
+length = 0.6
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 24, 25, 26 ]
+}
+
+[sub_resource type="CircleShape2D" id=104]
+radius = 6.0
+
+[sub_resource type="DynamicFont" id=105]
+size = 3
+extra_spacing_top = 2
+extra_spacing_bottom = 2
+extra_spacing_char = 1
+extra_spacing_space = 2
+font_data = ExtResource( 48 )
+
+[sub_resource type="AtlasTexture" id=106]
+atlas = ExtResource( 2 )
+region = Rect2( 41, 160, 33, 9 )
+
+[sub_resource type="AtlasTexture" id=107]
+atlas = ExtResource( 2 )
+region = Rect2( 7, 150, 33, 9 )
+
+[sub_resource type="RectangleShape2D" id=108]
+extents = Vector2( 16.5, 4.5 )
+
+[sub_resource type="AtlasTexture" id=109]
+atlas = ExtResource( 2 )
+region = Rect2( 7, 120, 33, 9 )
+
+[sub_resource type="AtlasTexture" id=110]
+atlas = ExtResource( 2 )
+region = Rect2( 7, 150, 33, 9 )
+
+[sub_resource type="RectangleShape2D" id=111]
+extents = Vector2( 16.5, 4.5 )
+
+[sub_resource type="AtlasTexture" id=112]
+atlas = ExtResource( 2 )
+region = Rect2( 41, 150, 33, 9 )
+
+[sub_resource type="AtlasTexture" id=113]
+atlas = ExtResource( 2 )
+region = Rect2( 7, 150, 33, 9 )
+
+[sub_resource type="RectangleShape2D" id=114]
+extents = Vector2( 16.5, 4.5 )
+
+[sub_resource type="AtlasTexture" id=115]
+atlas = ExtResource( 2 )
+region = Rect2( 7, 140, 33, 9 )
+
+[sub_resource type="AtlasTexture" id=116]
+atlas = ExtResource( 2 )
+region = Rect2( 7, 150, 33, 9 )
+
+[sub_resource type="RectangleShape2D" id=117]
+extents = Vector2( 16.5, 4.5 )
+
+[sub_resource type="DynamicFont" id=118]
+size = 7
+font_data = ExtResource( 19 )
+
+[sub_resource type="DynamicFont" id=119]
+size = 3
+extra_spacing_char = 1
+extra_spacing_space = 2
+font_data = ExtResource( 48 )
+
+[sub_resource type="AtlasTexture" id=120]
+atlas = ExtResource( 18 )
+region = Rect2( 47, 2, 17, 45 )
+
+[sub_resource type="AtlasTexture" id=121]
+atlas = ExtResource( 18 )
+region = Rect2( 65, 2, 22, 45 )
+
+[sub_resource type="AtlasTexture" id=122]
+atlas = ExtResource( 18 )
+region = Rect2( 88, 2, 17, 45 )
+
+[sub_resource type="AtlasTexture" id=123]
+atlas = ExtResource( 18 )
+region = Rect2( 2, 1, 19, 47 )
+
+[sub_resource type="AtlasTexture" id=124]
+atlas = ExtResource( 18 )
+region = Rect2( 22, 1, 24, 47 )
+
+[sub_resource type="DynamicFont" id=125]
+size = 7
+font_data = ExtResource( 19 )
+
+[node name="root" type="Node2D"]
+script = ExtResource( 40 )
+
+[node name="play scene" type="Node2D" parent="."]
+
+[node name="map" parent="play scene" instance=ExtResource( 4 )]
+
+[node name="Player" type="KinematicBody2D" parent="play scene"]
+position = Vector2( 140, 114 )
+script = ExtResource( 44 )
+
+[node name="the camera" type="Camera2D" parent="play scene/Player"]
+position = Vector2( -140, -68 )
+anchor_mode = 0
+current = true
+limit_left = 0
+limit_top = 46
+limit_right = 1044
+limit_bottom = 480
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="game filter (filter 3)" type="ColorRect" parent="play scene/Player/the camera"]
+visible = false
+margin_left = 60.0
+margin_right = 240.0
+margin_bottom = 135.0
+rect_pivot_offset = Vector2( 80, 68 )
+color = Color( 0.0980392, 0.109804, 0.0862745, 0.294118 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="in game store" type="Sprite" parent="play scene/Player/the camera"]
+visible = false
+position = Vector2( 60, 0 )
+texture = ExtResource( 20 )
+centered = false
+offset = Vector2( 0, -1 )
+script = ExtResource( 47 )
+
+[node name="club" type="Sprite" parent="play scene/Player/the camera/in game store"]
+position = Vector2( 3, 75 )
+texture = SubResource( 1 )
+centered = false
+
+[node name="sword" type="Sprite" parent="play scene/Player/the camera/in game store"]
+visible = false
+position = Vector2( 3, 75 )
+texture = SubResource( 2 )
+centered = false
+
+[node name="pisol" type="Sprite" parent="play scene/Player/the camera/in game store"]
+visible = false
+position = Vector2( 3, 75 )
+texture = SubResource( 3 )
+centered = false
+
+[node name="fake key" type="Sprite" parent="play scene/Player/the camera/in game store"]
+visible = false
+position = Vector2( 3, 75 )
+texture = SubResource( 4 )
+centered = false
+
+[node name="real key" type="Sprite" parent="play scene/Player/the camera/in game store"]
+visible = false
+position = Vector2( 3, 75 )
+texture = SubResource( 5 )
+centered = false
+
+[node name="respawn coin" type="Label" parent="play scene/Player/the camera/in game store"]
+margin_left = 16.0
+margin_top = 19.0
+margin_right = 35.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="seller dialog box" type="RichTextLabel" parent="play scene/Player/the camera/in game store"]
+margin_left = 45.0
+margin_top = 97.0
+margin_right = 177.0
+margin_bottom = 132.0
+custom_fonts/normal_font = SubResource( 7 )
+tab_size = 0
+text = "a club blessed by Jesus himself \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ have the ability to kill a ghost\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ PRICE : 1 respawn coin"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="secret door interaction" type="Sprite" parent="play scene/Player/the camera"]
+visible = false
+position = Vector2( 60, 0 )
+texture = ExtResource( 11 )
+centered = false
+script = ExtResource( 42 )
+
+[node name="Button1" type="TouchScreenButton" parent="play scene/Player/the camera/secret door interaction"]
+position = Vector2( 8, 48 )
+pressed = SubResource( 8 )
+shape = SubResource( 9 )
+
+[node name="Button2" type="TouchScreenButton" parent="play scene/Player/the camera/secret door interaction"]
+position = Vector2( 32, 48 )
+pressed = SubResource( 10 )
+shape = SubResource( 11 )
+
+[node name="Button3" type="TouchScreenButton" parent="play scene/Player/the camera/secret door interaction"]
+position = Vector2( 56, 48 )
+pressed = SubResource( 12 )
+shape = SubResource( 13 )
+
+[node name="Button4" type="TouchScreenButton" parent="play scene/Player/the camera/secret door interaction"]
+position = Vector2( 80, 48 )
+pressed = SubResource( 14 )
+shape = SubResource( 15 )
+
+[node name="Button5" type="TouchScreenButton" parent="play scene/Player/the camera/secret door interaction"]
+position = Vector2( 104, 48 )
+pressed = SubResource( 16 )
+shape = SubResource( 17 )
+
+[node name="Button6" type="TouchScreenButton" parent="play scene/Player/the camera/secret door interaction"]
+position = Vector2( 8, 72 )
+pressed = SubResource( 18 )
+shape = SubResource( 19 )
+
+[node name="Button7" type="TouchScreenButton" parent="play scene/Player/the camera/secret door interaction"]
+position = Vector2( 32, 72 )
+pressed = SubResource( 20 )
+shape = SubResource( 21 )
+
+[node name="Button8" type="TouchScreenButton" parent="play scene/Player/the camera/secret door interaction"]
+position = Vector2( 56, 72 )
+pressed = SubResource( 22 )
+shape = SubResource( 23 )
+
+[node name="Button9" type="TouchScreenButton" parent="play scene/Player/the camera/secret door interaction"]
+position = Vector2( 80, 72 )
+pressed = SubResource( 24 )
+shape = SubResource( 25 )
+
+[node name="Button0" type="TouchScreenButton" parent="play scene/Player/the camera/secret door interaction"]
+position = Vector2( 104, 72 )
+pressed = SubResource( 26 )
+shape = SubResource( 27 )
+
+[node name="enter button" type="TouchScreenButton" parent="play scene/Player/the camera/secret door interaction"]
+position = Vector2( 129, 49 )
+pressed = SubResource( 28 )
+shape = SubResource( 29 )
+
+[node name="digit 1" type="Sprite" parent="play scene/Player/the camera/secret door interaction"]
+visible = false
+position = Vector2( 13, 10 )
+texture = SubResource( 30 )
+centered = false
+
+[node name="digit 2" type="Sprite" parent="play scene/Player/the camera/secret door interaction"]
+visible = false
+position = Vector2( 46, 10 )
+texture = SubResource( 30 )
+centered = false
+
+[node name="digit 3" type="Sprite" parent="play scene/Player/the camera/secret door interaction"]
+visible = false
+position = Vector2( 79, 10 )
+texture = SubResource( 30 )
+centered = false
+
+[node name="digit 4" type="Sprite" parent="play scene/Player/the camera/secret door interaction"]
+visible = false
+position = Vector2( 112, 10 )
+texture = SubResource( 30 )
+centered = false
+
+[node name="digit 5" type="Sprite" parent="play scene/Player/the camera/secret door interaction"]
+visible = false
+position = Vector2( 145, 10 )
+texture = SubResource( 30 )
+centered = false
+
+[node name="opacity layer (filter1)" type="ColorRect" parent="play scene/Player/the camera"]
+visible = false
+modulate = Color( 0.980392, 0.0980392, 0.0980392, 1 )
+margin_left = 60.0
+margin_right = 240.0
+margin_bottom = 135.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="notification sign" type="Node2D" parent="play scene/Player/the camera"]
+position = Vector2( 60, 0 )
+
+[node name="lose sign" type="Sprite" parent="play scene/Player/the camera/notification sign"]
+visible = false
+texture = ExtResource( 34 )
+centered = false
+
+[node name="win sign" type="Sprite" parent="play scene/Player/the camera/notification sign"]
+visible = false
+texture = ExtResource( 33 )
+centered = false
+
+[node name="respawn sign" type="Sprite" parent="play scene/Player/the camera/notification sign"]
+visible = false
+texture = ExtResource( 35 )
+centered = false
+
+[node name="die sign" type="Sprite" parent="play scene/Player/the camera/notification sign"]
+visible = false
+texture = ExtResource( 36 )
+centered = false
+
+[node name="ui" type="Sprite" parent="play scene/Player/the camera"]
+z_index = 1
+centered = false
+script = ExtResource( 3 )
+
+[node name="ui overlay 1(turn off able in setting)" type="Sprite" parent="play scene/Player/the camera/ui"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="joi stick wheel" type="AnimatedSprite" parent="play scene/Player/the camera/ui"]
+frames = SubResource( 56 )
+centered = false
+
+[node name="center of controller" type="Node2D" parent="play scene/Player/the camera/ui"]
+position = Vector2( 29, 107 )
+
+[node name="joi stick" type="TouchScreenButton" parent="play scene/Player/the camera/ui/center of controller"]
+position = Vector2( -12, -12 )
+normal = SubResource( 57 )
+shape = SubResource( 58 )
+script = ExtResource( 32 )
+
+[node name="setting button" type="TouchScreenButton" parent="play scene/Player/the camera/ui"]
+position = Vector2( 12, 13 )
+normal = SubResource( 59 )
+pressed = SubResource( 60 )
+shape = SubResource( 61 )
+
+[node name="button 1" type="TouchScreenButton" parent="play scene/Player/the camera/ui"]
+position = Vector2( 3.00002, 57 )
+normal = SubResource( 62 )
+pressed = SubResource( 63 )
+shape = SubResource( 64 )
+
+[node name="button 2" type="TouchScreenButton" parent="play scene/Player/the camera/ui"]
+position = Vector2( 31, 57 )
+normal = SubResource( 65 )
+pressed = SubResource( 66 )
+shape = SubResource( 67 )
+
+[node name="ingame inventory" type="Sprite" parent="play scene/Player/the camera/ui"]
+position = Vector2( 21, 33 )
+texture = SubResource( 68 )
+centered = false
+script = ExtResource( 49 )
+
+[node name="item1" type="Sprite" parent="play scene/Player/the camera/ui/ingame inventory"]
+position = Vector2( -10.5, 7.5 )
+
+[node name="item2" type="Sprite" parent="play scene/Player/the camera/ui/ingame inventory"]
+position = Vector2( 25.5, 7.5 )
+
+[node name="item equied" type="Sprite" parent="play scene/Player/the camera/ui/ingame inventory"]
+position = Vector2( 7.5, 7.5 )
+
+[node name="ui overlay 2" type="Sprite" parent="play scene/Player/the camera/ui"]
+visible = false
+texture = ExtResource( 10 )
+centered = false
+
+[node name="opacity layer" type="Sprite" parent="play scene/Player/the camera/ui"]
+visible = false
+
+[node name="setting menu" type="Sprite" parent="play scene/Player/the camera/ui"]
+visible = false
+texture = ExtResource( 37 )
+centered = false
+script = ExtResource( 43 )
+
+[node name="setting button menu" type="TouchScreenButton" parent="play scene/Player/the camera/ui/setting menu"]
+position = Vector2( 133, 44 )
+normal = SubResource( 69 )
+pressed = SubResource( 70 )
+shape = SubResource( 71 )
+
+[node name="resume" type="TouchScreenButton" parent="play scene/Player/the camera/ui/setting menu"]
+position = Vector2( 133, 57 )
+normal = SubResource( 72 )
+pressed = SubResource( 73 )
+shape = SubResource( 74 )
+
+[node name="sound" type="TouchScreenButton" parent="play scene/Player/the camera/ui/setting menu"]
+position = Vector2( 133, 68 )
+normal = SubResource( 75 )
+pressed = SubResource( 76 )
+shape = SubResource( 77 )
+
+[node name="quit" type="TouchScreenButton" parent="play scene/Player/the camera/ui/setting menu"]
+position = Vector2( 133, 79 )
+normal = SubResource( 78 )
+pressed = SubResource( 79 )
+shape = SubResource( 80 )
+
+[node name="Timer" type="Timer" parent="play scene/Player/the camera/ui"]
+wait_time = 0.75
+script = ExtResource( 46 )
+
+[node name="default" type="Sprite" parent="play scene/Player"]
+texture = ExtResource( 51 )
+vframes = 5
+hframes = 5
+frame = 12
+
+[node name="default AnimationPlayer" type="AnimationPlayer" parent="play scene/Player/default"]
+autoplay = "idle up"
+"anims/die pit" = SubResource( 81 )
+"anims/idle down" = SubResource( 82 )
+"anims/idle up" = SubResource( 83 )
+"anims/run down" = SubResource( 84 )
+"anims/run up" = SubResource( 85 )
+
+[node name="uniform" type="Sprite" parent="play scene/Player"]
+visible = false
+texture = ExtResource( 9 )
+vframes = 5
+hframes = 5
+frame = 12
+
+[node name="uniform AnimationPlayer" type="AnimationPlayer" parent="play scene/Player/uniform"]
+autoplay = "idle up"
+"anims/die pit" = SubResource( 86 )
+"anims/idle down" = SubResource( 87 )
+"anims/idle up" = SubResource( 88 )
+"anims/run down" = SubResource( 89 )
+"anims/run up" = SubResource( 90 )
+
+[node name="yoga teacher" type="Sprite" parent="play scene/Player"]
+visible = false
+texture = ExtResource( 12 )
+vframes = 5
+hframes = 5
+frame = 12
+
+[node name="yoga teacher AnimationPlayer" type="AnimationPlayer" parent="play scene/Player/yoga teacher"]
+autoplay = "idle up"
+"anims/die pit" = SubResource( 91 )
+"anims/idle down" = SubResource( 92 )
+"anims/idle up" = SubResource( 93 )
+"anims/run down" = SubResource( 94 )
+"anims/run up" = SubResource( 95 )
+
+[node name="ghost die" type="Sprite" parent="play scene/Player"]
+visible = false
+texture = ExtResource( 52 )
+vframes = 4
+hframes = 8
+frame = 2
+
+[node name="ghost die AnimationPlayer" type="AnimationPlayer" parent="play scene/Player/ghost die"]
+autoplay = "idle up"
+"anims/idle down" = SubResource( 96 )
+"anims/idle up" = SubResource( 97 )
+"anims/run down" = SubResource( 98 )
+"anims/run up" = SubResource( 99 )
+
+[node name="ghost skin" type="Sprite" parent="play scene/Player"]
+visible = false
+texture = ExtResource( 52 )
+vframes = 4
+hframes = 8
+frame = 25
+
+[node name="ghost skin AnimationPlayer" type="AnimationPlayer" parent="play scene/Player/ghost skin"]
+autoplay = "idle down"
+"anims/idle down" = SubResource( 100 )
+"anims/idle up" = SubResource( 101 )
+"anims/run down" = SubResource( 102 )
+"anims/run up" = SubResource( 103 )
+
+[node name="CollisionShape" type="CollisionShape2D" parent="play scene/Player"]
+position = Vector2( 1, 17.5 )
+shape = SubResource( 104 )
+
+[node name="dialog boxes" type="Node2D" parent="play scene/Player"]
+visible = false
+script = ExtResource( 50 )
+
+[node name="text box default" type="Sprite" parent="play scene/Player/dialog boxes"]
+visible = false
+position = Vector2( -80, 3 )
+texture = ExtResource( 26 )
+centered = false
+
+[node name="text box dev" type="Sprite" parent="play scene/Player/dialog boxes"]
+visible = false
+position = Vector2( -80, 3 )
+texture = ExtResource( 27 )
+centered = false
+
+[node name="text box ghost" type="Sprite" parent="play scene/Player/dialog boxes"]
+visible = false
+position = Vector2( -80, 3 )
+texture = ExtResource( 28 )
+centered = false
+
+[node name="text box shop keeper" type="Sprite" parent="play scene/Player/dialog boxes"]
+visible = false
+position = Vector2( -80, 3 )
+texture = ExtResource( 29 )
+centered = false
+
+[node name="text box uniform" type="Sprite" parent="play scene/Player/dialog boxes"]
+visible = false
+position = Vector2( -80, 3 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="text box yoga teacher" type="Sprite" parent="play scene/Player/dialog boxes"]
+visible = false
+position = Vector2( -80, 3 )
+texture = ExtResource( 31 )
+centered = false
+
+[node name="dialog timer" type="Timer" parent="play scene/Player/dialog boxes"]
+wait_time = 0.05
+
+[node name="dialog box" type="RichTextLabel" parent="play scene/Player/dialog boxes"]
+margin_left = -72.0
+margin_top = 43.0
+margin_right = 92.0
+margin_bottom = 63.0
+custom_fonts/normal_font = SubResource( 105 )
+bbcode_enabled = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sound" type="Node" parent="play scene/Player"]
+
+[node name="buttons afx" type="AudioStreamPlayer" parent="play scene/Player/sound"]
+stream = ExtResource( 54 )
+volume_db = -20.0
+script = ExtResource( 53 )
+
+[node name="talking afx" type="AudioStreamPlayer" parent="play scene/Player/sound"]
+stream = ExtResource( 55 )
+volume_db = -10.0
+script = ExtResource( 56 )
+
+[node name="ingame music" type="AudioStreamPlayer" parent="play scene/Player/sound"]
+stream = ExtResource( 57 )
+volume_db = -10.0
+script = ExtResource( 60 )
+
+[node name="ingame music2" type="AudioStreamPlayer" parent="play scene/Player/sound"]
+stream = ExtResource( 58 )
+volume_db = -10.0
+
+[node name="menu music" type="AudioStreamPlayer" parent="play scene/Player/sound"]
+stream = ExtResource( 59 )
+script = ExtResource( 61 )
+
+[node name="temporarely fix" type="VideoPlayer" parent="play scene/Player"]
+visible = false
+margin_left = -80.0
+margin_top = -68.0
+margin_right = 100.0
+margin_bottom = 67.0
+expand = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu" type="Node2D" parent="."]
+position = Vector2( 0, 46 )
+
+[node name="back ground" type="Sprite" parent="menu"]
+position = Vector2( 150, 68 )
+texture = ExtResource( 1 )
+script = ExtResource( 38 )
+
+[node name="play button" type="TouchScreenButton" parent="menu/back ground"]
+position = Vector2( -37, -37 )
+normal = SubResource( 106 )
+pressed = SubResource( 107 )
+shape = SubResource( 108 )
+
+[node name="inventory button" type="TouchScreenButton" parent="menu/back ground"]
+position = Vector2( -37, -24 )
+normal = SubResource( 109 )
+pressed = SubResource( 110 )
+shape = SubResource( 111 )
+
+[node name="setting button" type="TouchScreenButton" parent="menu/back ground"]
+position = Vector2( -37, -11 )
+normal = SubResource( 69 )
+pressed = SubResource( 70 )
+shape = SubResource( 71 )
+
+[node name="credit button" type="TouchScreenButton" parent="menu/back ground"]
+position = Vector2( -37, 2 )
+normal = SubResource( 112 )
+pressed = SubResource( 113 )
+shape = SubResource( 114 )
+
+[node name="quit button" type="TouchScreenButton" parent="menu/back ground"]
+position = Vector2( -37, 15 )
+normal = SubResource( 115 )
+pressed = SubResource( 116 )
+shape = SubResource( 117 )
+
+[node name="credit" type="Sprite" parent="menu/back ground"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="menu/back ground/credit"]
+margin_left = -90.0
+margin_top = -67.5
+margin_right = 90.0
+margin_bottom = 67.5
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="menu/back ground/credit"]
+margin_left = -83.0
+margin_top = -57.5
+margin_right = 85.0
+margin_bottom = 57.5
+custom_fonts/font = SubResource( 118 )
+text = "- main developer - 
+kietjay12345
+_- animation artist -
+kietjay12345
+- cut scene artist -
+Luong T.Phong
+z('3')s
+- a gift to -
+the birthday person"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fuck" type="Label" parent="menu/back ground"]
+modulate = Color( 1, 0, 0, 1 )
+self_modulate = Color( 1, 0, 0, 1 )
+light_mask = 0
+margin_left = -90.0
+margin_top = 53.0
+margin_right = 90.0
+margin_bottom = 67.0
+custom_fonts/font = SubResource( 119 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0, 0, 1 )
+text = " some of the features missing are due to problem of the engine and will be patch in the future "
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="inventory" type="Node2D" parent="menu"]
+visible = false
+position = Vector2( 150, 68 )
+script = ExtResource( 39 )
+
+[node name="inv ColorRect (filter2)" type="ColorRect" parent="menu/inventory"]
+margin_left = -90.0
+margin_top = -68.0
+margin_right = 90.0
+margin_bottom = 67.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="default icon" type="Sprite" parent="menu/inventory"]
+position = Vector2( -60, -49 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="uniform icon" type="Sprite" parent="menu/inventory"]
+position = Vector2( -31, -49 )
+texture = ExtResource( 16 )
+centered = false
+
+[node name="ghost skin icon" type="Sprite" parent="menu/inventory"]
+position = Vector2( -2, -49 )
+texture = ExtResource( 15 )
+centered = false
+
+[node name="yoga icon" type="Sprite" parent="menu/inventory"]
+position = Vector2( 33, -49 )
+texture = ExtResource( 17 )
+centered = false
+
+[node name="lock panel 1" type="Sprite" parent="menu/inventory"]
+position = Vector2( -31, -49 )
+texture = SubResource( 120 )
+centered = false
+
+[node name="lock panel 2" type="Sprite" parent="menu/inventory"]
+position = Vector2( -2, -49 )
+texture = SubResource( 121 )
+centered = false
+
+[node name="lock panel 3" type="Sprite" parent="menu/inventory"]
+position = Vector2( 33, -49 )
+texture = SubResource( 122 )
+centered = false
+
+[node name="select panel 1" type="Sprite" parent="menu/inventory"]
+position = Vector2( -61, -50 )
+texture = SubResource( 123 )
+centered = false
+
+[node name="select panel 2" type="Sprite" parent="menu/inventory"]
+visible = false
+position = Vector2( -32, -50 )
+texture = SubResource( 123 )
+centered = false
+
+[node name="select panel 3" type="Sprite" parent="menu/inventory"]
+visible = false
+position = Vector2( -3, -50 )
+texture = SubResource( 124 )
+centered = false
+
+[node name="select panel 4" type="Sprite" parent="menu/inventory"]
+visible = false
+position = Vector2( 32, -50 )
+texture = SubResource( 123 )
+centered = false
+
+[node name="replay amount" type="Label" parent="menu/inventory"]
+margin_left = -70.0
+margin_top = 6.0
+margin_right = 70.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 125 )
+align = 1
+autowrap = true
+script = ExtResource( 41 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="bought_club" from="play scene/Player/the camera/in game store" to="play scene/Player/the camera/ui/ingame inventory" method="_on_in_game_store_bought_club"]
+[connection signal="bought_fk" from="play scene/Player/the camera/in game store" to="play scene/Player/the camera/ui/ingame inventory" method="_on_in_game_store_bought_fk"]
+[connection signal="bought_pistol" from="play scene/Player/the camera/in game store" to="play scene/Player/the camera/ui/ingame inventory" method="_on_in_game_store_bought_pistol"]
+[connection signal="bought_rk" from="play scene/Player/the camera/in game store" to="play scene/Player/the camera/ui/ingame inventory" method="_on_in_game_store_bought_rk"]
+[connection signal="bought_sword" from="play scene/Player/the camera/in game store" to="play scene/Player/the camera/ui/ingame inventory" method="_on_in_game_store_bought_sword"]
+[connection signal="visibility_changed" from="play scene/Player/the camera/in game store" to="." method="_on_in_game_store_visibility_changed"]
+[connection signal="visibility_changed" from="play scene/Player/the camera/in game store" to="play scene/Player/the camera/in game store" method="_on_in_game_store_visibility_changed"]
+[connection signal="visibility_changed" from="play scene/Player/the camera/secret door interaction" to="." method="_on_secret_door_interaction_visibility_changed"]
+[connection signal="pressed" from="play scene/Player/the camera/secret door interaction/Button1" to="play scene/Player/sound/buttons afx" method="_on_button_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/secret door interaction/Button1" to="play scene/Player/the camera/secret door interaction" method="_on_Button1_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/secret door interaction/Button2" to="play scene/Player/sound/buttons afx" method="_on_button_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/secret door interaction/Button2" to="play scene/Player/the camera/secret door interaction" method="_on_Button2_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/secret door interaction/Button3" to="play scene/Player/sound/buttons afx" method="_on_button_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/secret door interaction/Button3" to="play scene/Player/the camera/secret door interaction" method="_on_Button3_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/secret door interaction/Button4" to="play scene/Player/sound/buttons afx" method="_on_button_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/secret door interaction/Button4" to="play scene/Player/the camera/secret door interaction" method="_on_Button4_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/secret door interaction/Button5" to="play scene/Player/sound/buttons afx" method="_on_button_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/secret door interaction/Button5" to="play scene/Player/the camera/secret door interaction" method="_on_Button5_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/secret door interaction/Button6" to="play scene/Player/sound/buttons afx" method="_on_button_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/secret door interaction/Button6" to="play scene/Player/the camera/secret door interaction" method="_on_Button6_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/secret door interaction/Button7" to="play scene/Player/sound/buttons afx" method="_on_button_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/secret door interaction/Button7" to="play scene/Player/the camera/secret door interaction" method="_on_Button7_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/secret door interaction/Button8" to="play scene/Player/sound/buttons afx" method="_on_button_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/secret door interaction/Button8" to="play scene/Player/the camera/secret door interaction" method="_on_Button8_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/secret door interaction/Button9" to="play scene/Player/sound/buttons afx" method="_on_button_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/secret door interaction/Button9" to="play scene/Player/the camera/secret door interaction" method="_on_Button9_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/secret door interaction/Button0" to="play scene/Player/sound/buttons afx" method="_on_button_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/secret door interaction/Button0" to="play scene/Player/the camera/secret door interaction" method="_on_Button0_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/secret door interaction/enter button" to="play scene/Player/sound/buttons afx" method="_on_button_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/secret door interaction/enter button" to="play scene/Player/the camera/secret door interaction" method="_on_enter_button_pressed"]
+[connection signal="visibility_changed" from="play scene/Player/the camera/notification sign/win sign" to="." method="_on_win_sign_visibility_changed"]
+[connection signal="visibility_changed" from="play scene/Player/the camera/notification sign/die sign" to="." method="_on_die_sign_visibility_changed"]
+[connection signal="move_left" from="play scene/Player/the camera/ui/center of controller/joi stick" to="play scene/Player/the camera/in game store" method="_on_joi_stick_move_left"]
+[connection signal="move_right" from="play scene/Player/the camera/ui/center of controller/joi stick" to="play scene/Player/the camera/in game store" method="_on_joi_stick_move_right"]
+[connection signal="released" from="play scene/Player/the camera/ui/center of controller/joi stick" to="play scene/Player" method="_on_joi_stick_released"]
+[connection signal="timer_off" from="play scene/Player/the camera/ui/center of controller/joi stick" to="play scene/Player/the camera/ui/Timer" method="_on_joi_stick_timer_off"]
+[connection signal="timer_on" from="play scene/Player/the camera/ui/center of controller/joi stick" to="play scene/Player/the camera/ui/Timer" method="_on_joi_stick_timer_on"]
+[connection signal="pressed" from="play scene/Player/the camera/ui/setting button" to="play scene/Player/sound/buttons afx" method="_on_button_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/ui/setting button" to="play scene/Player/the camera/ui/setting menu" method="_on_setting_button_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/ui/button 1" to="menu/inventory" method="_on_button_1_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/ui/button 1" to="play scene/Player/dialog boxes" method="_on_button_1_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/ui/button 1" to="play scene/Player/sound/buttons afx" method="_on_button_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/ui/button 2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/ui/button 2" to="menu/inventory" method="_on_button_2_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/ui/button 2" to="play scene/Player/dialog boxes" method="_on_button_2_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/ui/button 2" to="play scene/Player/sound/buttons afx" method="_on_button_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/ui/button 2" to="play scene/Player/the camera/in game store" method="_on_button_2_pressed"]
+[connection signal="visibility_changed" from="play scene/Player/the camera/ui/setting menu" to="." method="_on_setting_menu_visibility_changed"]
+[connection signal="pressed" from="play scene/Player/the camera/ui/setting menu/setting button menu" to="play scene/Player/sound/buttons afx" method="_on_button_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/ui/setting menu/setting button menu" to="play scene/Player/the camera/ui/setting menu" method="_on_setting_button_menu_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/ui/setting menu/resume" to="play scene/Player/sound/buttons afx" method="_on_button_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/ui/setting menu/resume" to="play scene/Player/the camera/ui/setting menu" method="_on_resume_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/ui/setting menu/sound" to="play scene/Player/sound/buttons afx" method="_on_button_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/ui/setting menu/sound" to="play scene/Player/the camera/ui/setting menu" method="_on_sound_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/ui/setting menu/quit" to="play scene/Player/sound/buttons afx" method="_on_button_pressed"]
+[connection signal="pressed" from="play scene/Player/the camera/ui/setting menu/quit" to="play scene/Player/the camera/ui/setting menu" method="_on_quit_pressed"]
+[connection signal="timeout" from="play scene/Player/the camera/ui/Timer" to="play scene/Player/the camera/ui/center of controller/joi stick" method="_on_Timer_timeout"]
+[connection signal="cdone" from="play scene/Player/dialog boxes" to="play scene/Player/dialog boxes" method="_on_dialog_boxes_cdone"]
+[connection signal="start" from="play scene/Player/dialog boxes" to="play scene/Player/sound/talking afx" method="_on_dialog_boxes_start"]
+[connection signal="visibility_changed" from="play scene/Player/dialog boxes" to="." method="_on_dialog_boxes_visibility_changed"]
+[connection signal="timeout" from="play scene/Player/dialog boxes/dialog timer" to="play scene/Player/dialog boxes" method="_on_dialog_timer_timeout"]
+[connection signal="finished" from="play scene/Player/sound/ingame music" to="play scene/Player/sound/ingame music" method="_on_ingame_music_finished"]
+[connection signal="visibility_changed" from="menu/back ground" to="." method="_on_back_ground_visibility_changed"]
+[connection signal="visibility_changed" from="menu/back ground" to="play scene/Player/sound/menu music" method="_on_back_ground_visibility_changed"]
+[connection signal="visibility_changed" from="menu/back ground" to="play scene/Player/sound/ingame music" method="_on_back_ground_visibility_changed"]
+[connection signal="pressed" from="menu/back ground/play button" to="play scene/Player/sound/buttons afx" method="_on_button_pressed"]
+[connection signal="pressed" from="menu/back ground/play button" to="play scene/Player/sound/ingame music" method="_on_play_button_pressed"]
+[connection signal="pressed" from="menu/back ground/play button" to="menu/back ground" method="_on_play_button_pressed"]
+[connection signal="pressed" from="menu/back ground/inventory button" to="play scene/Player/sound/buttons afx" method="_on_button_pressed"]
+[connection signal="pressed" from="menu/back ground/inventory button" to="menu/back ground" method="_on_inventory_button_pressed"]
+[connection signal="pressed" from="menu/back ground/setting button" to="play scene/Player/sound/buttons afx" method="_on_button_pressed"]
+[connection signal="pressed" from="menu/back ground/setting button" to="menu/back ground" method="_on_setting_button_pressed"]
+[connection signal="pressed" from="menu/back ground/credit button" to="play scene/Player/sound/buttons afx" method="_on_button_pressed"]
+[connection signal="pressed" from="menu/back ground/credit button" to="menu/back ground" method="_on_credit_button_pressed"]
+[connection signal="pressed" from="menu/back ground/quit button" to="play scene/Player/sound/buttons afx" method="_on_button_pressed"]
+[connection signal="pressed" from="menu/back ground/quit button" to="menu/back ground" method="_on_quit_button_pressed"]
+[connection signal="visibility_changed" from="menu/back ground/credit" to="." method="_on_credit_visibility_changed"]
+[connection signal="pick_default" from="menu/inventory" to="menu/inventory/replay amount" method="_on_inventory_pick_default"]
+[connection signal="pick_ghost" from="menu/inventory" to="menu/inventory/replay amount" method="_on_inventory_pick_ghost"]
+[connection signal="pick_uniform" from="menu/inventory" to="menu/inventory/replay amount" method="_on_inventory_pick_uniform"]
+[connection signal="pick_yoga" from="menu/inventory" to="menu/inventory/replay amount" method="_on_inventory_pick_yoga"]
+[connection signal="visibility_changed" from="menu/inventory" to="menu/inventory/replay amount" method="_on_inventory_visibility_changed"]
+[connection signal="visibility_changed" from="menu/inventory" to="." method="_on_inventory_visibility_changed"]
+[connection signal="visibility_changed" from="menu/inventory" to="menu/inventory" method="_on_inventory_visibility_changed"]

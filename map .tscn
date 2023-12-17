@@ -1,0 +1,1320 @@
+[gd_scene load_steps=170 format=2]
+
+[ext_resource path="res://map/kiet the seller.png" type="Texture" id=1]
+[ext_resource path="res://map/static floor and wall.png" type="Texture" id=2]
+[ext_resource path="res://map/respawn button.png" type="Texture" id=3]
+[ext_resource path="res://map/wall 1.png" type="Texture" id=4]
+[ext_resource path="res://map/wall 2.png" type="Texture" id=5]
+[ext_resource path="res://map/wall 3.png" type="Texture" id=6]
+[ext_resource path="res://map/wall 20.png" type="Texture" id=7]
+[ext_resource path="res://map/wall 4.png" type="Texture" id=8]
+[ext_resource path="res://map/wall 5.png" type="Texture" id=9]
+[ext_resource path="res://map/wall 6.png" type="Texture" id=10]
+[ext_resource path="res://map/wall 7.png" type="Texture" id=11]
+[ext_resource path="res://map/secret door.png" type="Texture" id=12]
+[ext_resource path="res://map/wall 8.png" type="Texture" id=13]
+[ext_resource path="res://map/secret chamber.png" type="Texture" id=14]
+[ext_resource path="res://map/lock pick chest.png" type="Texture" id=15]
+[ext_resource path="res://map/big door.png" type="Texture" id=16]
+[ext_resource path="res://map/wall 14.png" type="Texture" id=17]
+[ext_resource path="res://map/wall 15.png" type="Texture" id=18]
+[ext_resource path="res://map/wall 16.png" type="Texture" id=19]
+[ext_resource path="res://map/wall 21.png" type="Texture" id=20]
+[ext_resource path="res://map/wall 17.png" type="Texture" id=21]
+[ext_resource path="res://map/wall 18.png" type="Texture" id=22]
+[ext_resource path="res://map/wall 22.png" type="Texture" id=23]
+[ext_resource path="res://map/interactive floor.png" type="Texture" id=24]
+[ext_resource path="res://map/final prize.png" type="Texture" id=25]
+[ext_resource path="res://map/trap door.png" type="Texture" id=26]
+[ext_resource path="res://map/wall 19.png" type="Texture" id=27]
+[ext_resource path="res://map/spike chamber.png" type="Texture" id=28]
+[ext_resource path="res://map/ghost skin special path.png" type="Texture" id=29]
+[ext_resource path="res://map/wall 9.png" type="Texture" id=30]
+[ext_resource path="res://map/wall 10.png" type="Texture" id=31]
+[ext_resource path="res://map/wall 11.png" type="Texture" id=32]
+[ext_resource path="res://map/wall 12.png" type="Texture" id=33]
+[ext_resource path="res://map/wall 13.png" type="Texture" id=34]
+[ext_resource path="res://map/tourches.png" type="Texture" id=35]
+[ext_resource path="res://prop/tourches light.png" type="Texture" id=36]
+[ext_resource path="res://wall logic.gd" type="Script" id=37]
+[ext_resource path="res://map logic/buy area.gd" type="Script" id=38]
+[ext_resource path="res://map logic/take coin area.gd" type="Script" id=39]
+[ext_resource path="res://map logic/Area2D bd.gd" type="Script" id=40]
+[ext_resource path="res://map logic/Area2D rb.gd" type="Script" id=41]
+[ext_resource path="res://map logic/Area2D sd.gd" type="Script" id=42]
+[ext_resource path="res://map logic/interact area fp.gd" type="Script" id=43]
+[ext_resource path="res://map logic/interact area lpc.gd" type="Script" id=44]
+[ext_resource path="res://map logic/StaticBody si.gd" type="Script" id=45]
+[ext_resource path="res://map logic/Area2D gssp.gd" type="Script" id=46]
+[ext_resource path="res://map logic/Area disapear.gd" type="Script" id=47]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 35 )
+region = Rect2( 0, 0, 10, 25 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 35 )
+region = Rect2( 10, 0, 10, 25 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 35 )
+region = Rect2( 20, 0, 10, 25 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 35 )
+region = Rect2( 30, 0, 10, 25 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 6.0
+} ]
+
+[sub_resource type="SegmentShape2D" id=6]
+a = Vector2( -12, 144 )
+b = Vector2( -36, 156 )
+
+[sub_resource type="SegmentShape2D" id=7]
+a = Vector2( 132, 240 )
+b = Vector2( -12, 168 )
+
+[sub_resource type="SegmentShape2D" id=8]
+a = Vector2( 132, 216 )
+b = Vector2( -12, 144 )
+
+[sub_resource type="SegmentShape2D" id=9]
+a = Vector2( 227, 72 )
+b = Vector2( 132, 216 )
+
+[sub_resource type="SegmentShape2D" id=10]
+a = Vector2( 154, 229 )
+b = Vector2( 132, 240 )
+
+[sub_resource type="SegmentShape2D" id=11]
+a = Vector2( 252, 84 )
+b = Vector2( 154, 229 )
+
+[sub_resource type="SegmentShape2D" id=12]
+a = Vector2( 227, 72 )
+b = Vector2( 252, 84 )
+
+[sub_resource type="SegmentShape2D" id=13]
+a = Vector2( -36, 156 )
+b = Vector2( -60, 168 )
+
+[sub_resource type="SegmentShape2D" id=14]
+a = Vector2( -36, 180 )
+b = Vector2( -60, 168 )
+
+[sub_resource type="SegmentShape2D" id=15]
+a = Vector2( -12, 168 )
+b = Vector2( -36, 180 )
+
+[sub_resource type="SegmentShape2D" id=16]
+a = Vector2( -540, 240 )
+b = Vector2( -540, 228 )
+
+[sub_resource type="SegmentShape2D" id=17]
+a = Vector2( -468, 192 )
+b = Vector2( -540, 228 )
+
+[sub_resource type="SegmentShape2D" id=18]
+a = Vector2( -360, 114 )
+b = Vector2( -312, 138 )
+
+[sub_resource type="SegmentShape2D" id=19]
+a = Vector2( -156, -36 )
+b = Vector2( -168, -42 )
+
+[sub_resource type="SegmentShape2D" id=20]
+a = Vector2( -120, -54 )
+b = Vector2( -156, -36 )
+
+[sub_resource type="SegmentShape2D" id=21]
+a = Vector2( 108, -84 )
+b = Vector2( -48, -6 )
+
+[sub_resource type="SegmentShape2D" id=22]
+a = Vector2( 204, -36 )
+b = Vector2( 192, -30 )
+
+[sub_resource type="SegmentShape2D" id=23]
+a = Vector2( 276, 12 )
+b = Vector2( 288, 6 )
+
+[sub_resource type="SegmentShape2D" id=24]
+a = Vector2( 288, 6 )
+b = Vector2( 324, 24 )
+
+[sub_resource type="SegmentShape2D" id=25]
+a = Vector2( 324, 24 )
+b = Vector2( 372, 0 )
+
+[sub_resource type="SegmentShape2D" id=26]
+a = Vector2( 372, 0 )
+b = Vector2( 504, 66 )
+
+[sub_resource type="SegmentShape2D" id=27]
+a = Vector2( -540, 240 )
+b = Vector2( -421, 240 )
+
+[sub_resource type="SegmentShape2D" id=28]
+a = Vector2( -397, 228 )
+b = Vector2( -421, 240 )
+
+[sub_resource type="SegmentShape2D" id=29]
+a = Vector2( -419, 216 )
+b = Vector2( -397, 228 )
+
+[sub_resource type="SegmentShape2D" id=30]
+a = Vector2( -384, 198 )
+b = Vector2( -419, 216 )
+
+[sub_resource type="SegmentShape2D" id=31]
+a = Vector2( -336, 222 )
+b = Vector2( -384, 198 )
+
+[sub_resource type="SegmentShape2D" id=32]
+a = Vector2( -241, 174 )
+b = Vector2( -336, 222 )
+
+[sub_resource type="SegmentShape2D" id=33]
+a = Vector2( -287, 150 )
+b = Vector2( -241, 174 )
+
+[sub_resource type="SegmentShape2D" id=34]
+a = Vector2( -168, 90 )
+b = Vector2( -287, 150 )
+
+[sub_resource type="SegmentShape2D" id=35]
+a = Vector2( 108, -36 )
+b = Vector2( 0, 18 )
+
+[sub_resource type="SegmentShape2D" id=36]
+a = Vector2( 108, -36 )
+b = Vector2( 120, -30 )
+
+[sub_resource type="SegmentShape2D" id=37]
+a = Vector2( 132, -36 )
+b = Vector2( 120, -30 )
+
+[sub_resource type="SegmentShape2D" id=38]
+a = Vector2( 132, -36 )
+b = Vector2( 167, -18 )
+
+[sub_resource type="SegmentShape2D" id=39]
+a = Vector2( 167, -18 )
+b = Vector2( 157, -12 )
+
+[sub_resource type="SegmentShape2D" id=40]
+a = Vector2( 157, -12 )
+b = Vector2( 204, 12 )
+
+[sub_resource type="SegmentShape2D" id=41]
+a = Vector2( 204, 12 )
+b = Vector2( 216, 6 )
+
+[sub_resource type="SegmentShape2D" id=42]
+a = Vector2( 251, 24 )
+b = Vector2( 216, 6 )
+
+[sub_resource type="SegmentShape2D" id=43]
+a = Vector2( 251, 24 )
+b = Vector2( 241, 30 )
+
+[sub_resource type="SegmentShape2D" id=44]
+a = Vector2( 241, 30 )
+b = Vector2( 275, 48 )
+
+[sub_resource type="SegmentShape2D" id=45]
+a = Vector2( 275, 48 )
+b = Vector2( 227, 72 )
+
+[sub_resource type="SegmentShape2D" id=46]
+a = Vector2( 360, 138 )
+b = Vector2( 252, 84 )
+
+[sub_resource type="SegmentShape2D" id=47]
+a = Vector2( 504, 66 )
+b = Vector2( 360, 138 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 26 )
+region = Rect2( 0, 0, 48, 26 )
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 26 )
+region = Rect2( 48, 0, 48, 26 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 26 )
+region = Rect2( 96, 0, 48, 26 )
+
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 26 )
+region = Rect2( 144, 0, 48, 26 )
+
+[sub_resource type="AtlasTexture" id=52]
+atlas = ExtResource( 26 )
+region = Rect2( 192, 0, 48, 26 )
+
+[sub_resource type="SpriteFrames" id=53]
+animations = [ {
+"frames": [ SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ) ],
+"loop": false,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SegmentShape2D" id=54]
+a = Vector2( -72, 138 )
+b = Vector2( -168, 90 )
+
+[sub_resource type="SegmentShape2D" id=55]
+a = Vector2( -36, 120 )
+b = Vector2( -72, 138 )
+
+[sub_resource type="SegmentShape2D" id=56]
+a = Vector2( -24, 126 )
+b = Vector2( -36, 120 )
+
+[sub_resource type="SegmentShape2D" id=57]
+a = Vector2( 71, 78 )
+b = Vector2( -24, 126 )
+
+[sub_resource type="SegmentShape2D" id=58]
+a = Vector2( 61, 72 )
+b = Vector2( 71, 78 )
+
+[sub_resource type="SegmentShape2D" id=59]
+a = Vector2( 96, 54 )
+b = Vector2( 61, 72 )
+
+[sub_resource type="SegmentShape2D" id=60]
+a = Vector2( 204, -36 )
+b = Vector2( 252, -12 )
+
+[sub_resource type="SegmentShape2D" id=61]
+a = Vector2( 240, -6 )
+b = Vector2( 252, -12 )
+
+[sub_resource type="SegmentShape2D" id=62]
+a = Vector2( 240, -6 )
+b = Vector2( 276, 12 )
+
+[sub_resource type="SegmentShape2D" id=63]
+a = Vector2( 108, -84 )
+b = Vector2( 168, -54 )
+
+[sub_resource type="SegmentShape2D" id=64]
+a = Vector2( 156, -48 )
+b = Vector2( 168, -54 )
+
+[sub_resource type="SegmentShape2D" id=65]
+a = Vector2( 156, -48 )
+b = Vector2( 192, -30 )
+
+[sub_resource type="SegmentShape2D" id=66]
+a = Vector2( 36, 24 )
+b = Vector2( 96, 54 )
+
+[sub_resource type="AtlasTexture" id=67]
+atlas = ExtResource( 16 )
+region = Rect2( 0, 0, 62, 92 )
+
+[sub_resource type="AtlasTexture" id=68]
+atlas = ExtResource( 16 )
+region = Rect2( 62, 0, 62, 92 )
+
+[sub_resource type="AtlasTexture" id=69]
+atlas = ExtResource( 16 )
+region = Rect2( 124, 0, 62, 92 )
+
+[sub_resource type="AtlasTexture" id=70]
+atlas = ExtResource( 16 )
+region = Rect2( 186, 0, 62, 92 )
+
+[sub_resource type="AtlasTexture" id=71]
+atlas = ExtResource( 16 )
+region = Rect2( 248, 0, 62, 92 )
+
+[sub_resource type="AtlasTexture" id=72]
+atlas = ExtResource( 16 )
+region = Rect2( 310, 0, 62, 92 )
+
+[sub_resource type="AtlasTexture" id=73]
+atlas = ExtResource( 16 )
+region = Rect2( 372, 0, 62, 92 )
+
+[sub_resource type="AtlasTexture" id=74]
+atlas = ExtResource( 16 )
+region = Rect2( 434, 0, 62, 92 )
+
+[sub_resource type="AtlasTexture" id=75]
+atlas = ExtResource( 16 )
+region = Rect2( 496, 0, 62, 92 )
+
+[sub_resource type="AtlasTexture" id=76]
+atlas = ExtResource( 16 )
+region = Rect2( 558, 0, 62, 92 )
+
+[sub_resource type="SpriteFrames" id=77]
+animations = [ {
+"frames": [ SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 76 ) ],
+"loop": false,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SegmentShape2D" id=78]
+a = Vector2( 18, 45 )
+b = Vector2( -30, 21 )
+
+[sub_resource type="SegmentShape2D" id=79]
+a = Vector2( 36, 24 )
+b = Vector2( 24, 30 )
+
+[sub_resource type="SegmentShape2D" id=80]
+a = Vector2( 24, 30 )
+b = Vector2( 0, 18 )
+
+[sub_resource type="SegmentShape2D" id=81]
+a = Vector2( -60, -24 )
+b = Vector2( -120, -54 )
+
+[sub_resource type="SegmentShape2D" id=82]
+a = Vector2( -60, -24 )
+b = Vector2( -72, -18 )
+
+[sub_resource type="SegmentShape2D" id=83]
+a = Vector2( -48, -6 )
+b = Vector2( -72, -18 )
+
+[sub_resource type="SegmentShape2D" id=84]
+a = Vector2( -310, -113 )
+b = Vector2( -168, -42 )
+
+[sub_resource type="SegmentShape2D" id=85]
+a = Vector2( -310, -113 )
+b = Vector2( -324, -105 )
+
+[sub_resource type="SegmentShape2D" id=86]
+a = Vector2( -324, -105 )
+b = Vector2( -338, -113 )
+
+[sub_resource type="SegmentShape2D" id=87]
+a = Vector2( -338, -113 )
+b = Vector2( -384, -90 )
+
+[sub_resource type="SegmentShape2D" id=88]
+a = Vector2( -324, -60 )
+b = Vector2( -384, -90 )
+
+[sub_resource type="SegmentShape2D" id=89]
+a = Vector2( -288, -78 )
+b = Vector2( -324, -60 )
+
+[sub_resource type="SegmentShape2D" id=90]
+a = Vector2( -259, -49 )
+b = Vector2( -163, -1 )
+
+[sub_resource type="SegmentShape2D" id=91]
+a = Vector2( -192, -30 )
+b = Vector2( -264, 6 )
+
+[sub_resource type="SegmentShape2D" id=92]
+a = Vector2( -168, -42 )
+b = Vector2( -172, -40 )
+
+[sub_resource type="AtlasTexture" id=93]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 47, 74 )
+
+[sub_resource type="AtlasTexture" id=94]
+atlas = ExtResource( 12 )
+region = Rect2( 47, 0, 47, 74 )
+
+[sub_resource type="AtlasTexture" id=95]
+atlas = ExtResource( 12 )
+region = Rect2( 94, 0, 47, 74 )
+
+[sub_resource type="AtlasTexture" id=96]
+atlas = ExtResource( 12 )
+region = Rect2( 141, 0, 47, 74 )
+
+[sub_resource type="AtlasTexture" id=97]
+atlas = ExtResource( 12 )
+region = Rect2( 188, 0, 47, 74 )
+
+[sub_resource type="AtlasTexture" id=98]
+atlas = ExtResource( 12 )
+region = Rect2( 235, 0, 47, 74 )
+
+[sub_resource type="SpriteFrames" id=99]
+animations = [ {
+"frames": [ SubResource( 93 ), SubResource( 94 ), SubResource( 95 ), SubResource( 96 ), SubResource( 97 ), SubResource( 98 ) ],
+"loop": false,
+"name": "default",
+"speed": 6.0
+} ]
+
+[sub_resource type="SegmentShape2D" id=100]
+a = Vector2( 10, 19 )
+b = Vector2( -10, 29 )
+
+[sub_resource type="SegmentShape2D" id=101]
+a = Vector2( -264, 6 )
+b = Vector2( -252, 12 )
+
+[sub_resource type="SegmentShape2D" id=102]
+a = Vector2( -252, 12 )
+b = Vector2( -288, 30 )
+
+[sub_resource type="SegmentShape2D" id=103]
+a = Vector2( -192, 78 )
+b = Vector2( -288, 30 )
+
+[sub_resource type="SegmentShape2D" id=104]
+a = Vector2( -192, 78 )
+b = Vector2( -312, 138 )
+
+[sub_resource type="SegmentShape2D" id=105]
+a = Vector2( -360, 114 )
+b = Vector2( -456, 162 )
+
+[sub_resource type="SegmentShape2D" id=106]
+a = Vector2( -456, 162 )
+b = Vector2( -408, 186 )
+
+[sub_resource type="SegmentShape2D" id=107]
+a = Vector2( -408, 186 )
+b = Vector2( -444, 204 )
+
+[sub_resource type="SegmentShape2D" id=108]
+a = Vector2( -468, 192 )
+b = Vector2( -444, 204 )
+
+[sub_resource type="CapsuleShape2D" id=109]
+radius = 3.0
+height = 6.0
+
+[sub_resource type="CircleShape2D" id=110]
+radius = 13.0
+
+[sub_resource type="AtlasTexture" id=111]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=112]
+atlas = ExtResource( 1 )
+region = Rect2( 100, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=113]
+atlas = ExtResource( 1 )
+region = Rect2( 200, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=114]
+atlas = ExtResource( 1 )
+region = Rect2( 300, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=115]
+atlas = ExtResource( 1 )
+region = Rect2( 400, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=116]
+atlas = ExtResource( 1 )
+region = Rect2( 500, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=117]
+atlas = ExtResource( 1 )
+region = Rect2( 600, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=118]
+atlas = ExtResource( 1 )
+region = Rect2( 700, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=119]
+atlas = ExtResource( 1 )
+region = Rect2( 800, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=120]
+atlas = ExtResource( 1 )
+region = Rect2( 900, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=121]
+atlas = ExtResource( 1 )
+region = Rect2( 1000, 0, 100, 100 )
+
+[sub_resource type="SpriteFrames" id=122]
+animations = [ {
+"frames": [ SubResource( 111 ), SubResource( 112 ), SubResource( 113 ), SubResource( 114 ), SubResource( 115 ), SubResource( 116 ), SubResource( 117 ), SubResource( 118 ), SubResource( 119 ), SubResource( 120 ), SubResource( 121 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[node name="map" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 1081.0
+margin_bottom = 481.0
+color = Color( 0.0196078, 0, 0.0313726, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ghost skin special path" type="Sprite" parent="."]
+visible = false
+position = Vector2( 540, 240 )
+texture = ExtResource( 29 )
+
+[node name="tourch6" type="AnimatedSprite" parent="ghost skin special path"]
+position = Vector2( 55, 142 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="Light2D 6" type="Light2D" parent="ghost skin special path/tourch6"]
+texture = ExtResource( 36 )
+texture_scale = 1.5
+energy = 1.3
+range_z_min = 0
+range_z_max = 0
+
+[node name="StaticBody sksp" type="StaticBody2D" parent="ghost skin special path"]
+
+[node name="CollisionShape sp1" type="CollisionShape2D" parent="ghost skin special path/StaticBody sksp"]
+shape = SubResource( 6 )
+
+[node name="CollisionShape sp2" type="CollisionShape2D" parent="ghost skin special path/StaticBody sksp"]
+shape = SubResource( 7 )
+
+[node name="CollisionShape sp3" type="CollisionShape2D" parent="ghost skin special path/StaticBody sksp"]
+shape = SubResource( 8 )
+
+[node name="CollisionShape sp4" type="CollisionShape2D" parent="ghost skin special path/StaticBody sksp"]
+shape = SubResource( 9 )
+
+[node name="CollisionShape sp5" type="CollisionShape2D" parent="ghost skin special path/StaticBody sksp"]
+shape = SubResource( 10 )
+
+[node name="CollisionShape sp6" type="CollisionShape2D" parent="ghost skin special path/StaticBody sksp"]
+shape = SubResource( 11 )
+
+[node name="CollisionShape sp7" type="CollisionShape2D" parent="ghost skin special path/StaticBody sksp"]
+shape = SubResource( 12 )
+
+[node name="Area2D gssp" type="Area2D" parent="ghost skin special path"]
+visible = false
+script = ExtResource( 46 )
+
+[node name="CollisionPolygon2D gssp" type="CollisionPolygon2D" parent="ghost skin special path/Area2D gssp"]
+polygon = PoolVector2Array( 227, 72, 132, 216, 154, 229, 252, 84 )
+
+[node name="spike chamber" type="Sprite" parent="."]
+visible = false
+position = Vector2( 540, 240 )
+texture = ExtResource( 28 )
+
+[node name="StaticBody sc" type="StaticBody2D" parent="spike chamber"]
+
+[node name="CollisionShape sc1" type="CollisionShape2D" parent="spike chamber/StaticBody sc"]
+shape = SubResource( 13 )
+
+[node name="CollisionShape sc2" type="CollisionShape2D" parent="spike chamber/StaticBody sc"]
+shape = SubResource( 14 )
+
+[node name="CollisionShape sc3" type="CollisionShape2D" parent="spike chamber/StaticBody sc"]
+shape = SubResource( 15 )
+
+[node name="wall 19" type="Sprite" parent="."]
+visible = false
+position = Vector2( 540, 240 )
+texture = ExtResource( 27 )
+
+[node name="static floor and wall" type="Sprite" parent="."]
+position = Vector2( 540, 240 )
+texture = ExtResource( 2 )
+
+[node name="tourch7" type="AnimatedSprite" parent="static floor and wall"]
+position = Vector2( 351, -14 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+flip_h = true
+
+[node name="Light2D 7" type="Light2D" parent="static floor and wall/tourch7"]
+texture = ExtResource( 36 )
+texture_scale = 1.5
+energy = 1.3
+range_z_min = 0
+range_z_max = 0
+
+[node name="first side sfaw" type="StaticBody2D" parent="static floor and wall"]
+
+[node name="CollisionShape sf0" type="CollisionShape2D" parent="static floor and wall/first side sfaw"]
+shape = SubResource( 16 )
+
+[node name="CollisionShape sf1" type="CollisionShape2D" parent="static floor and wall/first side sfaw"]
+shape = SubResource( 17 )
+
+[node name="CollisionShape sf2" type="CollisionShape2D" parent="static floor and wall/first side sfaw"]
+shape = SubResource( 18 )
+
+[node name="CollisionShape sf3" type="CollisionShape2D" parent="static floor and wall/first side sfaw"]
+shape = SubResource( 19 )
+
+[node name="CollisionShape sf4" type="CollisionShape2D" parent="static floor and wall/first side sfaw"]
+shape = SubResource( 20 )
+
+[node name="CollisionShape sf5" type="CollisionShape2D" parent="static floor and wall/first side sfaw"]
+shape = SubResource( 21 )
+
+[node name="CollisionShape sf6" type="CollisionShape2D" parent="static floor and wall/first side sfaw"]
+shape = SubResource( 22 )
+
+[node name="CollisionShape sf7" type="CollisionShape2D" parent="static floor and wall/first side sfaw"]
+shape = SubResource( 23 )
+
+[node name="CollisionShape sf8" type="CollisionShape2D" parent="static floor and wall/first side sfaw"]
+shape = SubResource( 24 )
+
+[node name="CollisionShape sf9" type="CollisionShape2D" parent="static floor and wall/first side sfaw"]
+shape = SubResource( 25 )
+
+[node name="CollisionShape sf10" type="CollisionShape2D" parent="static floor and wall/first side sfaw"]
+shape = SubResource( 26 )
+
+[node name="second side sfaw" type="StaticBody2D" parent="static floor and wall"]
+
+[node name="CollisionShape ss0" type="CollisionShape2D" parent="static floor and wall/second side sfaw"]
+shape = SubResource( 27 )
+
+[node name="CollisionShape ss1" type="CollisionShape2D" parent="static floor and wall/second side sfaw"]
+shape = SubResource( 28 )
+
+[node name="CollisionShape ss2" type="CollisionShape2D" parent="static floor and wall/second side sfaw"]
+shape = SubResource( 29 )
+
+[node name="CollisionShape ss3" type="CollisionShape2D" parent="static floor and wall/second side sfaw"]
+shape = SubResource( 30 )
+
+[node name="CollisionShape ss4" type="CollisionShape2D" parent="static floor and wall/second side sfaw"]
+shape = SubResource( 31 )
+
+[node name="CollisionShape ss5" type="CollisionShape2D" parent="static floor and wall/second side sfaw"]
+shape = SubResource( 32 )
+
+[node name="CollisionShape ss6" type="CollisionShape2D" parent="static floor and wall/second side sfaw"]
+shape = SubResource( 33 )
+
+[node name="CollisionShape ss7" type="CollisionShape2D" parent="static floor and wall/second side sfaw"]
+shape = SubResource( 34 )
+
+[node name="CollisionShape ss8" type="CollisionShape2D" parent="static floor and wall/second side sfaw"]
+shape = SubResource( 35 )
+
+[node name="CollisionShape ss9" type="CollisionShape2D" parent="static floor and wall/second side sfaw"]
+shape = SubResource( 36 )
+
+[node name="CollisionShape ss10" type="CollisionShape2D" parent="static floor and wall/second side sfaw"]
+shape = SubResource( 37 )
+
+[node name="CollisionShape ss11" type="CollisionShape2D" parent="static floor and wall/second side sfaw"]
+shape = SubResource( 38 )
+
+[node name="CollisionShape ss12" type="CollisionShape2D" parent="static floor and wall/second side sfaw"]
+shape = SubResource( 39 )
+
+[node name="CollisionShape ss13" type="CollisionShape2D" parent="static floor and wall/second side sfaw"]
+shape = SubResource( 40 )
+
+[node name="CollisionShape ss14" type="CollisionShape2D" parent="static floor and wall/second side sfaw"]
+shape = SubResource( 41 )
+
+[node name="CollisionShape ss15" type="CollisionShape2D" parent="static floor and wall/second side sfaw"]
+shape = SubResource( 42 )
+
+[node name="CollisionShape ss16" type="CollisionShape2D" parent="static floor and wall/second side sfaw"]
+shape = SubResource( 43 )
+
+[node name="CollisionShape ss17" type="CollisionShape2D" parent="static floor and wall/second side sfaw"]
+shape = SubResource( 44 )
+
+[node name="CollisionShape ss18" type="CollisionShape2D" parent="static floor and wall/second side sfaw"]
+shape = SubResource( 45 )
+
+[node name="CollisionShape ss19" type="CollisionShape2D" parent="static floor and wall/second side sfaw"]
+shape = SubResource( 46 )
+
+[node name="CollisionShape ss20" type="CollisionShape2D" parent="static floor and wall/second side sfaw"]
+shape = SubResource( 47 )
+
+[node name="trap door" type="AnimatedSprite" parent="."]
+position = Vector2( 504, 252 )
+frames = SubResource( 53 )
+
+[node name="final prize" type="Sprite" parent="."]
+position = Vector2( 540, 240 )
+texture = ExtResource( 25 )
+
+[node name="StaticBody fp" type="StaticBody2D" parent="final prize"]
+
+[node name="CollisionPolygon2D fp" type="CollisionPolygon2D" parent="final prize/StaticBody fp"]
+polygon = PoolVector2Array( 372, 96, 325, 73, 372, 50, 419, 73 )
+
+[node name="Area2D fp" type="Area2D" parent="final prize"]
+script = ExtResource( 37 )
+
+[node name="CollisionPolygon2D fp" type="CollisionPolygon2D" parent="final prize/Area2D fp"]
+polygon = PoolVector2Array( 325, 73, 372, 96, 419, 73, 419, 60, 372, 37, 325, 60 )
+
+[node name="interact area fp" type="Area2D" parent="final prize"]
+script = ExtResource( 43 )
+
+[node name="CollisionPolygon2D iafp" type="CollisionPolygon2D" parent="final prize/interact area fp"]
+polygon = PoolVector2Array( 372, 37, 301, 72, 372, 107, 443, 72 )
+
+[node name="interactive floor" type="Sprite" parent="."]
+position = Vector2( 540, 240 )
+texture = ExtResource( 24 )
+
+[node name="StaticBody ifss " type="StaticBody2D" parent="interactive floor"]
+
+[node name="CollisionShape ifss 1" type="CollisionShape2D" parent="interactive floor/StaticBody ifss "]
+shape = SubResource( 54 )
+
+[node name="CollisionShape ifss 2" type="CollisionShape2D" parent="interactive floor/StaticBody ifss "]
+shape = SubResource( 55 )
+
+[node name="CollisionShape ifss 3" type="CollisionShape2D" parent="interactive floor/StaticBody ifss "]
+shape = SubResource( 56 )
+
+[node name="CollisionShape ifss 4" type="CollisionShape2D" parent="interactive floor/StaticBody ifss "]
+shape = SubResource( 57 )
+
+[node name="CollisionShape ifss 5" type="CollisionShape2D" parent="interactive floor/StaticBody ifss "]
+shape = SubResource( 58 )
+
+[node name="CollisionShape ifss 6" type="CollisionShape2D" parent="interactive floor/StaticBody ifss "]
+shape = SubResource( 59 )
+
+[node name="wall 22" type="Sprite" parent="."]
+position = Vector2( 540, 240 )
+texture = ExtResource( 23 )
+
+[node name="StaticBody w22" type="StaticBody2D" parent="wall 22"]
+
+[node name="CollisionShape w22" type="CollisionShape2D" parent="wall 22/StaticBody w22"]
+shape = SubResource( 60 )
+
+[node name="Area disapear" type="Area2D" parent="."]
+script = ExtResource( 47 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area disapear"]
+polygon = PoolVector2Array( 791, 228, 783, 224, 783, 232 )
+
+[node name="wall 18" type="Sprite" parent="."]
+position = Vector2( 540, 240 )
+texture = ExtResource( 22 )
+
+[node name="StaticBody w18" type="StaticBody2D" parent="wall 18"]
+
+[node name="CollisionShape w18" type="CollisionShape2D" parent="wall 18/StaticBody w18"]
+shape = SubResource( 61 )
+
+[node name="Area2D w18" type="Area2D" parent="wall 18"]
+script = ExtResource( 37 )
+
+[node name="CollisionPolygon2D w19" type="CollisionPolygon2D" parent="wall 18/Area2D w18"]
+polygon = PoolVector2Array( 240, -7, 252, -13, 252, -86, 240, -80 )
+
+[node name="wall 17" type="Sprite" parent="."]
+position = Vector2( 540, 240 )
+texture = ExtResource( 21 )
+
+[node name="StaticBody w17" type="StaticBody2D" parent="wall 17"]
+
+[node name="CollisionShape w17" type="CollisionShape2D" parent="wall 17/StaticBody w17"]
+shape = SubResource( 62 )
+
+[node name="Area2D w17" type="Area2D" parent="wall 17"]
+script = ExtResource( 37 )
+
+[node name="CollisionPolygon2D w17" type="CollisionPolygon2D" parent="wall 17/Area2D w17"]
+polygon = PoolVector2Array( 240, -7, 276, 11, 276, -62, 240, -80 )
+
+[node name="wall 21" type="Sprite" parent="."]
+position = Vector2( 540, 240 )
+texture = ExtResource( 20 )
+
+[node name="StaticBody w21" type="StaticBody2D" parent="wall 21"]
+
+[node name="CollisionShape w21" type="CollisionShape2D" parent="wall 21/StaticBody w21"]
+shape = SubResource( 63 )
+
+[node name="wall 16" type="Sprite" parent="."]
+position = Vector2( 540, 240 )
+texture = ExtResource( 19 )
+
+[node name="StaticBody w16" type="StaticBody2D" parent="wall 16"]
+
+[node name="CollisionShape w16" type="CollisionShape2D" parent="wall 16/StaticBody w16"]
+shape = SubResource( 64 )
+
+[node name="Area2D w16" type="Area2D" parent="wall 16"]
+script = ExtResource( 37 )
+
+[node name="CollisionPolygon2D w16" type="CollisionPolygon2D" parent="wall 16/Area2D w16"]
+polygon = PoolVector2Array( 156, -49, 156, -122, 168, -128, 168, -55 )
+
+[node name="wall 15" type="Sprite" parent="."]
+position = Vector2( 540, 240 )
+texture = ExtResource( 18 )
+
+[node name="StaticBody w15" type="StaticBody2D" parent="wall 15"]
+
+[node name="CollisionShape w15" type="CollisionShape2D" parent="wall 15/StaticBody w15"]
+shape = SubResource( 65 )
+
+[node name="Area2D w15" type="Area2D" parent="wall 15"]
+script = ExtResource( 37 )
+
+[node name="CollisionPolygon2D w15" type="CollisionPolygon2D" parent="wall 15/Area2D w15"]
+polygon = PoolVector2Array( 156, -122, 192, -104, 192, -31, 156, -49 )
+
+[node name="wall 14" type="Sprite" parent="."]
+position = Vector2( 540, 240 )
+texture = ExtResource( 17 )
+
+[node name="StaticBody w14" type="StaticBody2D" parent="wall 14"]
+
+[node name="CollisionShape w14" type="CollisionShape2D" parent="wall 14/StaticBody w14"]
+shape = SubResource( 66 )
+
+[node name="Area2D w14" type="Area2D" parent="wall 14"]
+script = ExtResource( 37 )
+
+[node name="CollisionPolygon2D w14" type="CollisionPolygon2D" parent="wall 14/Area2D w14"]
+polygon = PoolVector2Array( 36, -50, 96, -20, 96, 53, 36, 23 )
+
+[node name="big door" type="AnimatedSprite" parent="."]
+position = Vector2( 522, 213 )
+frames = SubResource( 77 )
+
+[node name="StaticBody bd" type="StaticBody2D" parent="big door"]
+
+[node name="CollisionShape bd" type="CollisionShape2D" parent="big door/StaticBody bd"]
+position = Vector2( 0, -3.72529e-07 )
+shape = SubResource( 78 )
+
+[node name="Area2D bd" type="Area2D" parent="big door"]
+script = ExtResource( 40 )
+
+[node name="CollisionPolygon2D bd" type="CollisionPolygon2D" parent="big door/Area2D bd"]
+polygon = PoolVector2Array( -18, 27, -42, 39, -18, 51, 6, 39 )
+
+[node name="wall 13" type="Sprite" parent="."]
+position = Vector2( 540, 240 )
+texture = ExtResource( 34 )
+
+[node name="StaticBody w13" type="StaticBody2D" parent="wall 13"]
+
+[node name="CollisionShape w13" type="CollisionShape2D" parent="wall 13/StaticBody w13"]
+shape = SubResource( 79 )
+
+[node name="Area2D w13" type="Area2D" parent="wall 13"]
+script = ExtResource( 37 )
+
+[node name="CollisionPolygon2D w13" type="CollisionPolygon2D" parent="wall 13/Area2D w13"]
+polygon = PoolVector2Array( 24, -44, 36, -50, 36, 23, 24, 29 )
+
+[node name="wall 12" type="Sprite" parent="."]
+position = Vector2( 540, 240 )
+texture = ExtResource( 33 )
+
+[node name="tourch4" type="AnimatedSprite" parent="wall 12"]
+position = Vector2( 12, -3 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="Light2D 4" type="Light2D" parent="wall 12/tourch4"]
+texture = ExtResource( 36 )
+texture_scale = 1.5
+energy = 1.3
+range_z_min = 0
+range_z_max = 0
+
+[node name="StaticBody w12" type="StaticBody2D" parent="wall 12"]
+
+[node name="CollisionShape w12" type="CollisionShape2D" parent="wall 12/StaticBody w12"]
+shape = SubResource( 80 )
+
+[node name="Area2D w12" type="Area2D" parent="wall 12"]
+script = ExtResource( 37 )
+
+[node name="CollisionPolygon2D 12" type="CollisionPolygon2D" parent="wall 12/Area2D w12"]
+polygon = PoolVector2Array( 0, 17, 24, 29, 24, -44, 0, -55 )
+
+[node name="wall 11" type="Sprite" parent="."]
+position = Vector2( 540, 240 )
+texture = ExtResource( 32 )
+
+[node name="StaticBody w11" type="StaticBody2D" parent="wall 11"]
+
+[node name="CollisionShape w11" type="CollisionShape2D" parent="wall 11/StaticBody w11"]
+shape = SubResource( 81 )
+
+[node name="wall 10" type="Sprite" parent="."]
+position = Vector2( 540, 240 )
+texture = ExtResource( 31 )
+
+[node name="StaticBody w10" type="StaticBody2D" parent="wall 10"]
+
+[node name="CollisionShape w10" type="CollisionShape2D" parent="wall 10/StaticBody w10"]
+shape = SubResource( 82 )
+
+[node name="Area2D w10" type="Area2D" parent="wall 10"]
+script = ExtResource( 37 )
+
+[node name="CollisionPolygon2D w10" type="CollisionPolygon2D" parent="wall 10/Area2D w10"]
+polygon = PoolVector2Array( -72, -92, -60, -98, -60, -25, -72, -19 )
+
+[node name="wall 9" type="Sprite" parent="."]
+position = Vector2( 540, 240 )
+texture = ExtResource( 30 )
+
+[node name="tourch3" type="AnimatedSprite" parent="wall 9"]
+position = Vector2( -60, -39 )
+frames = SubResource( 5 )
+frame = 3
+playing = true
+
+[node name="Light2D 3" type="Light2D" parent="wall 9/tourch3"]
+texture = ExtResource( 36 )
+texture_scale = 1.5
+energy = 1.3
+range_z_min = 0
+range_z_max = 0
+
+[node name="StaticBody w9" type="StaticBody2D" parent="wall 9"]
+
+[node name="CollisionShape w9" type="CollisionShape2D" parent="wall 9/StaticBody w9"]
+shape = SubResource( 83 )
+
+[node name="Area2D w9" type="Area2D" parent="wall 9"]
+script = ExtResource( 37 )
+
+[node name="CollisionPolygon2D w9" type="CollisionPolygon2D" parent="wall 9/Area2D w9"]
+polygon = PoolVector2Array( -72, -19, -48, -7, -48, -80, -72, -92 )
+
+[node name="secret chamber" type="Sprite" parent="."]
+visible = false
+position = Vector2( 540, 240 )
+texture = ExtResource( 14 )
+
+[node name="tourch 5" type="AnimatedSprite" parent="secret chamber"]
+position = Vector2( -302, -133 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+flip_v = true
+
+[node name="Light2D 5" type="Light2D" parent="secret chamber/tourch 5"]
+texture = ExtResource( 36 )
+texture_scale = 1.5
+energy = 1.3
+range_z_min = 0
+range_z_max = 0
+
+[node name="StaticBody sc" type="StaticBody2D" parent="secret chamber"]
+
+[node name="CollisionShape sc1" type="CollisionShape2D" parent="secret chamber/StaticBody sc"]
+shape = SubResource( 84 )
+
+[node name="CollisionShape sc2 interact2" type="CollisionShape2D" parent="secret chamber/StaticBody sc"]
+shape = SubResource( 85 )
+
+[node name="CollisionShape sc3 interact2" type="CollisionShape2D" parent="secret chamber/StaticBody sc"]
+shape = SubResource( 86 )
+
+[node name="CollisionShape sc4" type="CollisionShape2D" parent="secret chamber/StaticBody sc"]
+shape = SubResource( 87 )
+
+[node name="StaticBody scss " type="StaticBody2D" parent="secret chamber"]
+
+[node name="CollisionShape scss1" type="CollisionShape2D" parent="secret chamber/StaticBody scss "]
+shape = SubResource( 88 )
+
+[node name="CollisionShape scss2" type="CollisionShape2D" parent="secret chamber/StaticBody scss "]
+shape = SubResource( 89 )
+
+[node name="CollisionShape scss3" type="CollisionShape2D" parent="secret chamber/StaticBody scss "]
+position = Vector2( -29, -29 )
+shape = SubResource( 90 )
+
+[node name="StaticBody si" type="Area2D" parent="secret chamber"]
+script = ExtResource( 45 )
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="secret chamber/StaticBody si"]
+polygon = PoolVector2Array( -324, -103, -309, -112, -324, -120, -339, -112 )
+
+[node name="lock pick chest" type="Sprite" parent="."]
+visible = false
+position = Vector2( 540, 240 )
+texture = ExtResource( 15 )
+
+[node name="StaticBody lpc" type="StaticBody2D" parent="lock pick chest"]
+
+[node name="CollisionPolygon lpc" type="CollisionPolygon2D" parent="lock pick chest/StaticBody lpc"]
+position = Vector2( 0, 1 )
+polygon = PoolVector2Array( -336, -79, -324, -73, -312, -79, -324, -84 )
+
+[node name="Area2D lpc" type="Area2D" parent="lock pick chest"]
+script = ExtResource( 37 )
+
+[node name="CollisionPolygon2D lpc" type="CollisionPolygon2D" parent="lock pick chest/Area2D lpc"]
+polygon = PoolVector2Array( -336, -79, -324, -73, -312, -79, -312, -90, -324, -96, -336, -90 )
+
+[node name="interact area lpc" type="Area2D" parent="lock pick chest"]
+script = ExtResource( 44 )
+
+[node name="CollisionPolygon2D ia lpc" type="CollisionPolygon2D" parent="lock pick chest/interact area lpc"]
+polygon = PoolVector2Array( -324, -65, -300, -78, -324, -89, -348, -78 )
+
+[node name="wall 8" type="Sprite" parent="."]
+position = Vector2( 540, 240 )
+texture = ExtResource( 13 )
+
+[node name="StaticBody w8" type="StaticBody2D" parent="wall 8"]
+
+[node name="CollisionShape w8 1" type="CollisionShape2D" parent="wall 8/StaticBody w8"]
+shape = SubResource( 91 )
+
+[node name="CollisionShape w8 2" type="CollisionShape2D" parent="wall 8/StaticBody w8"]
+shape = SubResource( 92 )
+
+[node name="Area2D w8" type="Area2D" parent="wall 8"]
+script = ExtResource( 37 )
+
+[node name="CollisionPolygon2D w8" type="CollisionPolygon2D" parent="wall 8/Area2D w8"]
+polygon = PoolVector2Array( -264, 5, -192, -31, -192, -78, -168, -90, -168, -116, -264, -68 )
+
+[node name="secret door" type="AnimatedSprite" parent="."]
+position = Vector2( 358, 181 )
+frames = SubResource( 99 )
+
+[node name="StaticBody sd" type="StaticBody2D" parent="secret door"]
+
+[node name="CollisionShape sd" type="CollisionShape2D" parent="secret door/StaticBody sd"]
+shape = SubResource( 100 )
+
+[node name="Area2D sd" type="Area2D" parent="secret door"]
+script = ExtResource( 42 )
+
+[node name="CollisionPolygon2D sd" type="CollisionPolygon2D" parent="secret door/Area2D sd"]
+polygon = PoolVector2Array( -10, 29, 10, 19, 12, 20, -8, 30 )
+
+[node name="wall 7" type="Sprite" parent="."]
+position = Vector2( 540, 240 )
+texture = ExtResource( 11 )
+
+[node name="StaticBody w7" type="StaticBody2D" parent="wall 7"]
+
+[node name="CollisionShape w7" type="CollisionShape2D" parent="wall 7/StaticBody w7"]
+shape = SubResource( 101 )
+
+[node name="Area2D w7" type="Area2D" parent="wall 7"]
+script = ExtResource( 37 )
+
+[node name="CollisionPolygon2D w7" type="CollisionPolygon2D" parent="wall 7/Area2D w7"]
+polygon = PoolVector2Array( -264, -68, -252, -62, -252, 11, -264, 5 )
+
+[node name="wall 6" type="Sprite" parent="."]
+position = Vector2( 540, 240 )
+texture = ExtResource( 10 )
+
+[node name="StaticBody w6" type="StaticBody2D" parent="wall 6"]
+
+[node name="CollisionShape w6" type="CollisionShape2D" parent="wall 6/StaticBody w6"]
+shape = SubResource( 102 )
+
+[node name="Area2D w6" type="Area2D" parent="wall 6"]
+script = ExtResource( 37 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="wall 6/Area2D w6"]
+polygon = PoolVector2Array( -288, -44, -252, -62, -252, 11, -288, 29 )
+
+[node name="wall 5" type="Sprite" parent="."]
+position = Vector2( 540, 240 )
+texture = ExtResource( 9 )
+
+[node name="StaticBody w5" type="StaticBody2D" parent="wall 5"]
+
+[node name="CollisionShape w5" type="CollisionShape2D" parent="wall 5/StaticBody w5"]
+shape = SubResource( 103 )
+
+[node name="Area2D w5" type="Area2D" parent="wall 5"]
+script = ExtResource( 37 )
+
+[node name="CollisionPolygon2D w5" type="CollisionPolygon2D" parent="wall 5/Area2D w5"]
+position = Vector2( 0, -1 )
+polygon = PoolVector2Array( -192, 78, -192, 4, -288, -44, -288, 30 )
+
+[node name="wall 4" type="Sprite" parent="."]
+position = Vector2( 540, 240 )
+texture = ExtResource( 8 )
+
+[node name="StaticBody w4" type="StaticBody2D" parent="wall 4"]
+
+[node name="CollisionShape w4" type="CollisionShape2D" parent="wall 4/StaticBody w4"]
+shape = SubResource( 104 )
+
+[node name="Area2D w4" type="Area2D" parent="wall 4"]
+script = ExtResource( 37 )
+
+[node name="CollisionPolygon2D w4" type="CollisionPolygon2D" parent="wall 4/Area2D w4"]
+polygon = PoolVector2Array( -312, 137, -192, 77, -192, 4, -312, 64 )
+
+[node name="wall 20" type="Sprite" parent="."]
+position = Vector2( 540, 240 )
+texture = ExtResource( 7 )
+
+[node name="tourch2" type="AnimatedSprite" parent="wall 20"]
+position = Vector2( -394, 104 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+flip_h = true
+
+[node name="Light2D 2" type="Light2D" parent="wall 20/tourch2"]
+texture = ExtResource( 36 )
+texture_scale = 1.5
+energy = 1.3
+range_z_min = 0
+range_z_max = 0
+
+[node name="StaticBody w20" type="StaticBody2D" parent="wall 20"]
+
+[node name="CollisionShape w20" type="CollisionShape2D" parent="wall 20/StaticBody w20"]
+shape = SubResource( 105 )
+
+[node name="Area2D w20" type="Area2D" parent="wall 20"]
+script = ExtResource( 37 )
+
+[node name="CollisionPolygon2D ww20" type="CollisionPolygon2D" parent="wall 20/Area2D w20"]
+polygon = PoolVector2Array( -456, 88, -456, 161, -360, 113, -360, 40 )
+
+[node name="wall 3" type="Sprite" parent="."]
+position = Vector2( 540, 240 )
+texture = ExtResource( 6 )
+
+[node name="StaticBody w3" type="StaticBody2D" parent="wall 3"]
+
+[node name="Collision w3" type="CollisionShape2D" parent="wall 3/StaticBody w3"]
+shape = SubResource( 106 )
+
+[node name="Area2D w3" type="Area2D" parent="wall 3"]
+script = ExtResource( 37 )
+
+[node name="CollisionPolygon2D w3" type="CollisionPolygon2D" parent="wall 3/Area2D w3"]
+polygon = PoolVector2Array( -408, 185, -456, 161, -456, 88, -408, 112 )
+
+[node name="wall 2" type="Sprite" parent="."]
+position = Vector2( 540, 240 )
+texture = ExtResource( 5 )
+
+[node name="StaticBody w2" type="StaticBody2D" parent="wall 2"]
+
+[node name="CollisionShape w2" type="CollisionShape2D" parent="wall 2/StaticBody w2"]
+shape = SubResource( 107 )
+
+[node name="Area2D w2" type="Area2D" parent="wall 2"]
+script = ExtResource( 37 )
+
+[node name="CollisionPolygon2D w2" type="CollisionPolygon2D" parent="wall 2/Area2D w2"]
+polygon = PoolVector2Array( -444, 130, -408, 112, -408, 185, -444, 203 )
+
+[node name="wall 1" type="Sprite" parent="."]
+position = Vector2( 540, 240 )
+texture = ExtResource( 4 )
+
+[node name="tourch" type="AnimatedSprite" parent="wall 1"]
+position = Vector2( -456, 167 )
+frames = SubResource( 5 )
+playing = true
+
+[node name="Light2D 1" type="Light2D" parent="wall 1/tourch"]
+texture = ExtResource( 36 )
+texture_scale = 1.5
+energy = 1.3
+range_z_min = 0
+range_z_max = 0
+
+[node name="StaticBody w1" type="StaticBody2D" parent="wall 1"]
+
+[node name="CollisionShape w1" type="CollisionShape2D" parent="wall 1/StaticBody w1"]
+shape = SubResource( 108 )
+
+[node name="Area2D w1" type="Area2D" parent="wall 1"]
+script = ExtResource( 37 )
+
+[node name="CollisionPolygon2D w1" type="CollisionPolygon2D" parent="wall 1/Area2D w1"]
+polygon = PoolVector2Array( -468, 118, -468, 191, -444, 203, -444, 130 )
+
+[node name="respawn button" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="respawn button"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="respawn button/StaticBody2D"]
+position = Vector2( 72, 435 )
+shape = SubResource( 109 )
+
+[node name="Area2D rb" type="Area2D" parent="respawn button"]
+collision_mask = 3
+script = ExtResource( 41 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="respawn button/Area2D rb"]
+position = Vector2( 72, 435 )
+shape = SubResource( 110 )
+
+[node name="kiet the seller" type="AnimatedSprite" parent="."]
+position = Vector2( 193, 385 )
+frames = SubResource( 122 )
+frame = 1
+playing = true
+
+[node name="StaticBody kts" type="StaticBody2D" parent="kiet the seller"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="kiet the seller/StaticBody kts"]
+polygon = PoolVector2Array( -49, 23, -1, 47, 47, 23, -1, -1 )
+
+[node name="Area2D kts" type="Area2D" parent="kiet the seller"]
+script = ExtResource( 37 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="kiet the seller/Area2D kts"]
+polygon = PoolVector2Array( -49, 22, -1, 46, 47, 22, 47, -25, -1, -49, -49, -25 )
+
+[node name="buy area" type="Area2D" parent="kiet the seller"]
+script = ExtResource( 38 )
+
+[node name="CollisionPolygon2D ba" type="CollisionPolygon2D" parent="kiet the seller/buy area"]
+polygon = PoolVector2Array( -49, 23, -55, 26, -7, 50, -1, 47 )
+
+[node name="take coin area" type="Area2D" parent="kiet the seller"]
+collision_mask = 3
+script = ExtResource( 39 )
+
+[node name="CollisionPolygon2D tca" type="CollisionPolygon2D" parent="kiet the seller/take coin area"]
+polygon = PoolVector2Array( 47, 23, 53, 20, 39, 13, 33, 16 )
+[connection signal="body_entered" from="ghost skin special path/Area2D gssp" to="ghost skin special path/Area2D gssp" method="_on_Area2D_gssp_body_entered"]
+[connection signal="body_exited" from="ghost skin special path/Area2D gssp" to="ghost skin special path/Area2D gssp" method="_on_Area2D_gssp_body_exited"]
+[connection signal="body_entered" from="Area disapear" to="Area disapear" method="_on_Area_disapear_body_entered"]
+[connection signal="body_exited" from="Area disapear" to="Area disapear" method="_on_Area_disapear_body_exited"]
